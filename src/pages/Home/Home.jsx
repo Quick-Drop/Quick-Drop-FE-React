@@ -1,10 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import Carousel from '../../components/Carousel';
+import Carousel from '../../components/common/Carousel';
 import { COLOR } from '../../components/common/color';
 import Wrapper from '../../components/common/Wrapper';
 
 function Home() {
+  const signUpOnClick = () => {
+    console.log('Sign Up');
+  };
+  const signInOnClick = () => {
+    console.log('Sign In');
+  };
   return (
     <Wrapper>
       <SkipButton>Skip</SkipButton>
@@ -16,8 +22,8 @@ function Home() {
         Intro & onboarding part for a guide of this application “quick drop”
         blahblahbla
       </Text>
-      <SignUpButton>Sign Up</SignUpButton>
-      <SignInButton>Sign In</SignInButton>
+      <SignUpButton onClick={signUpOnClick}>Sign Up</SignUpButton>
+      <SignInButton onClick={signInOnClick}>Sign In</SignInButton>
     </Wrapper>
   );
 }
@@ -41,6 +47,7 @@ const Text = styled.div`
 `;
 
 const Button = styled.button`
+  cursor: pointer;
   display: block;
   border-radius: 12px;
   width: 327px;
@@ -55,17 +62,28 @@ const SkipButton = styled(Button)`
   color: ${COLOR.mainPurple};
   width: 60px;
   height: 36px;
+  &:hover {
+    font-size: 2em;
+  }
 `;
 
 const SignUpButton = styled(Button)`
   margin: 10px auto 10px;
   background-color: ${COLOR.mainPurple};
-  color: white;
+  color: ${COLOR.white};
+  &:hover {
+    background-color: ${COLOR.white};
+    color: ${COLOR.mainPurple};
+  }
 `;
 const SignInButton = styled(Button)`
   margin: 10px auto 10px;
   background-color: ${COLOR.lightPurple};
   color: #54408c;
+  &:hover {
+    background-color: ${COLOR.mainPurple};
+    color: ${COLOR.lightPurple};
+  }
 `;
 
 export default Home;
