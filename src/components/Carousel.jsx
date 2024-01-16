@@ -9,7 +9,7 @@ const StyledCarousel = styled.div`
   display: block;
   margin: 0 auto;
   background-color: black;
-  border-radius: 2px;
+  border-radius: 12px;
   width: 320px;
   height: 320px;
 `;
