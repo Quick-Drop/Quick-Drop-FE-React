@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import Carousel from '../../components/common/Carousel';
+import styled, { ThemeProvider } from 'styled-components';
+import Carousel from '../../components/Carousel';
+import theme from '../../components/common/theme';
 import { COLOR } from '../../components/common/color';
-import Wrapper from '../../components/common/Wrapper';
 
 function Home() {
   const signUpOnClick = () => {
@@ -12,21 +12,32 @@ function Home() {
     console.log('Sign In');
   };
   return (
-    <Wrapper>
-      <SkipButton>Skip</SkipButton>
-      <Carousel />
-      <Title>
-        <div>기부를 손쉽게!</div> 준비 되셨나요?
-      </Title>
-      <Text>
-        Intro & onboarding part for a guide of this application “quick drop”
-        blahblahbla
-      </Text>
-      <SignUpButton onClick={signUpOnClick}>Sign Up</SignUpButton>
-      <SignInButton onClick={signInOnClick}>Sign In</SignInButton>
-    </Wrapper>
+    <ThemeProvider theme={theme}>
+      <MobileContainer>
+        <SkipButton>Skip</SkipButton>
+        <Carousel />
+        <Title>
+          <div>기부를 손쉽게!</div> 준비 되셨나요?
+        </Title>
+        <Text>
+          Intro & onboarding part for a guide of this application “quick drop”
+          blahblahbla
+        </Text>
+        <SignUpButton onClick={signUpOnClick}>Sign Up</SignUpButton>
+        <SignInButton onClick={signInOnClick}>Sign In</SignInButton>
+      </MobileContainer>
+    </ThemeProvider>
   );
 }
+
+const MobileContainer = styled.div`
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 100%;
+  }
+  @media ${({ theme }) => theme.device.laptop} {
+    display: none;
+  }
+`;
 
 const Title = styled.h1`
   width: 243px;
