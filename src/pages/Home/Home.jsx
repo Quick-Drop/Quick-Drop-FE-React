@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import Carousel from '../../components/Carousel';
 import theme from '../../components/common/theme';
-import { COLOR } from '../../components/common/color';
 
 function Home() {
   const signUpOnClick = () => {
@@ -70,7 +69,7 @@ const Button = styled.button`
 
 const SkipButton = styled(Button)`
   background-color: transparent;
-  color: ${COLOR.mainPurple};
+  color: ${COLOR.mainGreen};
   width: 60px;
   height: 36px;
   &:hover {
@@ -80,20 +79,20 @@ const SkipButton = styled(Button)`
 
 const SignUpButton = styled(Button)`
   margin: 10px auto 10px;
-  background-color: ${COLOR.mainPurple};
+  background-color: ${COLOR.mainGreen};
   color: ${COLOR.white};
   &:hover {
     background-color: ${COLOR.white};
-    color: ${COLOR.mainPurple};
+    color: ${COLOR.mainGreen};
   }
 `;
 const SignInButton = styled(Button)`
   margin: 10px auto 10px;
-  background-color: ${COLOR.lightPurple};
+  background-color: ${COLOR.lightGreen};
   color: #54408c;
   &:hover {
-    background-color: ${COLOR.mainPurple};
-    color: ${COLOR.lightPurple};
+    background-color: ${COLOR.mainGreen};
+    color: ${COLOR.lightGreen};
   }
 `;
 
