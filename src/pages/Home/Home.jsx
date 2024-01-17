@@ -13,7 +13,7 @@ function Home() {
   };
   return (
     <ThemeProvider theme={theme}>
-      <Container>
+      <MobileContainer>
         <SkipButton>Skip</SkipButton>
         <Carousel />
         <Title>
@@ -25,12 +25,12 @@ function Home() {
         </Text>
         <SignUpButton onClick={signUpOnClick}>Sign Up</SignUpButton>
         <SignInButton onClick={signInOnClick}>Sign In</SignInButton>
-      </Container>
+      </MobileContainer>
     </ThemeProvider>
   );
 }
 
-const Container = styled.div`
+const MobileContainer = styled.div`
   @media ${({ theme }) => theme.device.mobile} {
     width: 100%;
   }
