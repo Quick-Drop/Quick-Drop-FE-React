@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import Carousel from '../../components/Carousel';
-import theme from '../../components/common/theme';
+import theme, { COLOR } from '../../components/common/theme';
 
-function Home() {
+function Onboarding() {
   const signUpOnClick = () => {
     console.log('Sign Up');
   };
@@ -96,4 +96,4 @@ const SignInButton = styled(Button)`
   }
 `;
 
-export default Home;
+export default Onboarding;
