@@ -1,12 +1,14 @@
 import { React } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home/Home';
+import Onboarding from './pages/Home/Onboarding';
 import Search from './pages/Search';
+import Home from './pages/Home';
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Onboarding />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/search" element={<Search />} />
     </Routes>
   );
